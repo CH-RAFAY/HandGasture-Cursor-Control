@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hand Gesture Virtual Mouse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer Vision Interaction Project</p>
+          <h1>Control your computer with hand gestures.</h1>
+          <p class="lead">
+            A webcam-powered virtual mouse built with Python, OpenCV, MediaPipe,
+            and PyAutoGUI for real-time cursor movement, click gestures, and
+            smooth shutdown.
+          </p>
+          <div class="hero-actions">
+            <a href="../cv_virtual_mouse_pipeline_update.md" class="button button-solid">Read Project Update</a>
+            <a href="../README.md" class="button button-outline">Open Quick Guide</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="signal-card">
+            <span class="signal-label">Live Capability</span>
+            <strong>Cursor tracking</strong>
+          </div>
+          <div class="signal-card">
+            <span class="signal-label">Gesture Input</span>
+            <strong>Pinch to click</strong>
+          </div>
+          <div class="signal-card">
+            <span class="signal-label">Shutdown</span>
+            <strong>One action closes camera fully</strong>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section grid-two">
+          <article class="card">
+            <p class="section-kicker">How it works</p>
+            <h2>Vision detects the hand, then Python turns intent into mouse events.</h2>
+            <p>
+              Each webcam frame is analyzed by MediaPipe Hands, which returns
+              landmark points for the thumb, index finger, middle finger, and
+              palm. The application measures those positions and distances, then
+              converts them into movement, clicks, and scroll behavior.
+            </p>
+          </article>
+
+          <article class="card accent-card">
+            <p class="section-kicker">Why it matters</p>
+            <h2>Natural interaction without touching the mouse.</h2>
+            <p>
+              This project demonstrates a practical use of computer vision in
+              human-computer interaction. It is useful as a learning project, a
+              demo system, and a base for more advanced gesture interfaces.
+            </p>
+          </article>
+        </section>
+
+        <section class="section">
+          <p class="section-kicker">Gesture Map</p>
+          <div class="gesture-grid">
+            <article class="gesture-card">
+              <h3>Move Cursor</h3>
+              <p>Point with your index finger and the cursor follows with smoothing.</p>
+            </article>
+            <article class="gesture-card">
+              <h3>Left Click</h3>
+              <p>Bring your thumb and index fingertip together for a left click.</p>
+            </article>
+            <article class="gesture-card">
+              <h3>Right Click</h3>
+              <p>Bring your thumb and middle fingertip together for a right click.</p>
+            </article>
+            <article class="gesture-card">
+              <h3>Scroll</h3>
+              <p>Keep index and middle fingertips close and move up or down.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section tech-strip">
+          <p class="section-kicker">Technology Stack</p>
+          <div class="pill-row">
+            <span>Python</span>
+            <span>OpenCV</span>
+            <span>MediaPipe Hands</span>
+            <span>PyAutoGUI</span>
+            <span>Real-Time Gesture Logic</span>
+          </div>
+        </section>
+
+        <section class="section grid-two">
+          <article class="card">
+            <p class="section-kicker">Reliability</p>
+            <h2>Camera shutdown is intentional and complete.</h2>
+            <p>
+              Press <code>Q</code>, press <code>Esc</code>, or close the preview
+              window once. The program releases the camera, closes the hand
+              tracker, and destroys all OpenCV windows so the webcam is not left
+              hanging in the background.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="section-kicker">Next steps</p>
+            <h2>Built to grow into a richer HCI system.</h2>
+            <p>
+              The project can be extended with drag-and-drop, double-click,
+              calibration, sensitivity controls, and a full desktop dashboard for
+              tuning gesture behavior.
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

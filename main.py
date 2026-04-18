@@ -1,18 +1,5 @@
-import cv2
-import mediapipe as mp
+from gesture_mouse_pipeline import run_virtual_mouse_pipeline
 
 
-cap = cv2.VideoCapture(0)
-hand_detector = mp.solutions.hands.Hands()
-
-while True:
-    _, frame = cap.read()
-    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    output = hand_detector.process(rgb_frame)
-    hands = output.multi_hand_landmarks
-    if hand in hands:
-        
-
-    print(hands)
-    cv2.imshow('Virtual Mouse', frame)
-    cv2.waitKey(1)
+if __name__ == "__main__":
+    run_virtual_mouse_pipeline()
