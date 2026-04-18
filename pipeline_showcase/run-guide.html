@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Run Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <nav class="topbar">
+        <a href="./index.html" class="brand">Gesture Mouse Hub</a>
+        <div class="nav-links">
+          <a href="./index.html">Home</a>
+          <a href="./pipeline.html">Pipeline</a>
+          <a href="./run-guide.html">Run Project</a>
+          <a href="./project-files.html">Project Files</a>
+        </div>
+      </nav>
+
+      <section class="subhero">
+        <p class="eyebrow">Run Guide</p>
+        <h1>How to start the project from the repo.</h1>
+        <p class="lead">
+          This frontend can guide you through the project, but the Python app
+          itself must be started from the terminal.
+        </p>
+      </section>
+
+      <main class="section grid-two">
+        <article class="card">
+          <p class="section-kicker">Commands</p>
+          <h2>Use these commands in the project root.</h2>
+          <pre class="code-panel"><code>pip install -r requirements.txt
+python main.py</code></pre>
+          <p>
+            The launcher in <code>main.py</code> calls the gesture pipeline and
+            opens the webcam preview window.
+          </p>
+        </article>
+
+        <article class="card accent-card">
+          <p class="section-kicker">Shutdown</p>
+          <h2>Close the camera completely with one action.</h2>
+          <p>
+            Press <code>Q</code>, press <code>Esc</code>, or click the preview
+            window close button once. The app releases the camera and destroys
+            the OpenCV windows.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="section-kicker">Why not run from HTML?</p>
+          <h2>A static frontend cannot execute local Python directly.</h2>
+          <p>
+            Browsers do not allow a normal local HTML page to launch Python code
+            on your machine automatically. That is why this page gives you the
+            exact command instead of pretending the button can start the app.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="section-kicker">Helpful Links</p>
+          <div class="action-grid">
+            <a class="mini-panel" href="../main.py">
+              <strong>Open Launcher</strong>
+              <span>See the small entry file used to start the project.</span>
+            </a>
+            <a class="mini-panel" href="../README.md">
+              <strong>Open README</strong>
+              <span>Review the quick-start and gesture guide.</span>
+            </a>
+            <a class="mini-panel" href="./pipeline.html">
+              <strong>Open Pipeline Page</strong>
+              <span>Follow the complete CV processing flow visually.</span>
+            </a>
+          </div>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

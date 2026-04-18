@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pipeline Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <nav class="topbar">
+        <a href="./index.html" class="brand">Gesture Mouse Hub</a>
+        <div class="nav-links">
+          <a href="./index.html">Home</a>
+          <a href="./pipeline.html">Pipeline</a>
+          <a href="./run-guide.html">Run Project</a>
+          <a href="./project-files.html">Project Files</a>
+        </div>
+      </nav>
+
+      <section class="subhero">
+        <p class="eyebrow">Pipeline Overview</p>
+        <h1>From webcam frame to mouse action.</h1>
+        <p class="lead">
+          This page explains the complete virtual-mouse pipeline in the order it
+          happens inside the Python application.
+        </p>
+      </section>
+
+      <main class="section stack-layout">
+        <article class="card flow-card">
+          <span class="flow-index">01</span>
+          <div>
+            <h2>Frame Capture</h2>
+            <p>
+              OpenCV opens the webcam and reads a frame continuously so the
+              program always has fresh visual input.
+            </p>
+          </div>
+        </article>
+
+        <article class="card flow-card">
+          <span class="flow-index">02</span>
+          <div>
+            <h2>Preprocessing</h2>
+            <p>
+              The frame is flipped horizontally to feel natural and converted
+              from BGR to RGB so it can be passed into MediaPipe correctly.
+            </p>
+          </div>
+        </article>
+
+        <article class="card flow-card">
+          <span class="flow-index">03</span>
+          <div>
+            <h2>Hand Landmarker</h2>
+            <p>
+              MediaPipe Tasks runs the hand-landmarker model and returns 21 hand
+              landmarks for the detected hand.
+            </p>
+          </div>
+        </article>
+
+        <article class="card flow-card">
+          <span class="flow-index">04</span>
+          <div>
+            <h2>Gesture Logic</h2>
+            <p>
+              The code checks key fingertip distances and positions to decide if
+              the user means move, left click, right click, or scroll.
+            </p>
+          </div>
+        </article>
+
+        <article class="card flow-card">
+          <span class="flow-index">05</span>
+          <div>
+            <h2>OS Control</h2>
+            <p>
+              PyAutoGUI converts the interpreted gesture into real operating
+              system actions such as moving the cursor or clicking.
+            </p>
+          </div>
+        </article>
+
+        <article class="card flow-card">
+          <span class="flow-index">06</span>
+          <div>
+            <h2>Visual Feedback And Exit</h2>
+            <p>
+              OpenCV draws status text and landmarks on screen, and the app
+              closes fully when the user presses <code>Q</code>, <code>Esc</code>,
+              or the window close button once.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="section-kicker">Direct Links</p>
+          <div class="action-grid">
+            <a class="mini-panel" href="../gesture_mouse_pipeline.py">
+              <strong>Open Pipeline Code</strong>
+              <span>View the Python module that implements the full CV flow.</span>
+            </a>
+            <a class="mini-panel" href="../cv_virtual_mouse_pipeline_update.md">
+              <strong>Open Pipeline Update</strong>
+              <span>Read the long-form explanation of technologies and progress.</span>
+            </a>
+            <a class="mini-panel" href="./run-guide.html">
+              <strong>Go To Run Guide</strong>
+              <span>See how to launch the app from the repository root.</span>
+            </a>
+          </div>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
